@@ -1,0 +1,57 @@
+body{
+	background: url("../assets/img/28.jpg");
+	background-size:cover;
+	background-attachment: fixed;
+}
+
+main {
+display: flex;
+}
+.prolog{
+font-size: 20pt;
+font-family: georgia;
+text-align: justify;
+border-left: 50px ;
+border-right: 100px;
+margin-left: 350px;
+margin-top: 150px;
+color: white;	
+}
+
+.konten {
+font-size: 50pt;
+font-family: georgia;
+text-align: justify;
+border-left: 50px ;
+border-right: 100px;
+margin-left: 250px;
+margin-top: -60px;
+color: white;
+}
+
+.konten h1{
+	margin-top: 80px;
+}
+.logo{
+	width: 150px;
+	height: 50px;
+}
+.tombol{
+	background-color: white;
+	color: black;
+	border: none;
+	border-radius: 18px;
+	box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	margin: 10px 5px;
+	padding: 10px 15px;
+	font-size: 20px;
+	cursor: pointer;
+	margin-left: 600px;
+	margin-top: -80px;
+	text-decoration: none;
+}
+
+.tombol:hover{
+background-color: black;
+}

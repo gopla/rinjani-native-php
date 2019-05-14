@@ -1,12 +1,4 @@
-<div id="slider">
-    <img src="assets/img/hd.jpg" id="sliderImg1">
-    <img src="assets/img/a.jpg" id="sliderImg2">
-    <img src="assets/img/b.jpg" id="sliderImg3">
-    <img src="assets/img/c.jpg" id="sliderImg3">
-    <img src="assets/img/d.jpg" id="sliderImg3">
-    <img src="assets/img/e.jpg" id="sliderImg3">
-</div>
-<div class="card" style="width:80%; height:auto; margin-left:8%;">
+<div class="card" style="width:80%; height:auto; margin:8% 0 0 8%;">
     <div class="item-container">
         <?php
         include_once "config/connect.php";
@@ -27,11 +19,12 @@
                     ?>
                 </h2>
                 <br>
-                <h3><?php echo "Rp. " . number_format($row[3]) ?></h3>
+                <h3><?php echo "Rp. " . number_format($row[3], 0, ',', '.') ?></h3>
                 <br>
                 <form action="user/controllerCart.php?act=store" method="post">
+                    <input type="hidden" name="idUser" value="<?php echo $_SESSION['id'] ?>">
                     <input type="hidden" name="id" value="<?php echo $row[0] ?>">
-                    <button class="btn btn-putih">
+                    <button class="btn btn-putih" onclick="return confirm('Added to Cart~')">
                         <i class="fas fa-cart-plus    "></i>
                         <span>Add to Cart</span>
                     </button>

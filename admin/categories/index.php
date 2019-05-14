@@ -1,3 +1,9 @@
+<div class="card-header">
+    <h3>
+        <i class="fas fa-list    "></i>
+        <span>Categories</span>
+    </h3>
+</div>
 <a href="index.php?menu=categories&&method=add">
     <button class="btn btn-ijo">
         <i class="fas fa-plus    "></i>

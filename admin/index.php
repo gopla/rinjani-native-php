@@ -8,20 +8,33 @@ include("../config/protectAdmin.php");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/styles.css" />
-    <link rel="stylesheet" href="../assets/js/jquery-ui-1.12.1/jquery-ui.min.css" />
+    <!-- JS Locals -->
     <script src="../assets/js/jquery-3.3.1.js"></script>
     <script src="../assets/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Font -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+    <!-- Local Files -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/js/jquery-ui-1.12.1/jquery-ui.min.css" />
+
     <script src="../assets/js/app.js"></script>
+
     <title>Document</title>
 </head>
 
 
 <body>
     <div class="navbar">
-        <img src="../assets/img/logo.png" alt="logo">
+        <img src="../assets/img/logo.png" alt="logo" id="hideSidebar" style="cursor:pointer;">
         <div>
             <a href="../login/logout.php" id="linkLogout">
                 <i class="fas fa-power-off    "></i>
@@ -37,7 +50,7 @@ include("../config/protectAdmin.php");
             <div class="sidebar_container">
                 <div class="sidebar_item">
                     <a href="index.php">
-                        <i class="fas fa-home    "></i>
+                        <i class="fas fa-tachometer-alt    "></i>
                         <span>Dashboard</span>
                     </a>
                 </div>
@@ -51,6 +64,12 @@ include("../config/protectAdmin.php");
                     <a href="index.php?menu=products">
                         <i class="fas fa-campground    "></i>
                         <span>Products</span>
+                    </a>
+                </div>
+                <div class="sidebar_item">
+                    <a href="index.php?menu=transactions">
+                        <i class="fas fa-piggy-bank    "></i>
+                        <span>Transactions</span>
                     </a>
                 </div>
                 <div class="sidebar_item">
@@ -81,6 +100,10 @@ include("../config/protectAdmin.php");
 
                         case 'users':
                             include_once "users/index.php";
+                            break;
+
+                        case 'transactions':
+                            include_once "transaction/index.php";
                             break;
                     }
                 } else if ($menu == "products") {
@@ -117,8 +140,13 @@ include("../config/protectAdmin.php");
                             include_once "users/formUsers.php";
                             break;
                     }
+                } else if ($menu == "transactions") {
+                    switch ($method) {
+                        case 'show':
+                            include_once "transaction/detailTransaction.php";
+                            break;
+                    }
                 }
-
                 ?>
             </div>
         </div>

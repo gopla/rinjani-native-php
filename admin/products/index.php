@@ -1,29 +1,35 @@
-    <a href="index.php?menu=products&&method=add">
-        <button class="btn btn-ijo">
-            <i class="fas fa-plus    "></i>
-            <span>Add Data</span>
-        </button>
-    </a>
-    <table class="table" border="0">
-        <thead>
-            <th>#</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Stock</th>
-            <th>Image</th>
-            <th>Action</th>
-        </thead>
-        <tbody>
-            <?php
-            $query = mysqli_query($con, "select * from products");
-            $no = 0;
-            while ($row = mysqli_fetch_array($query)) {
-                $cat_query = mysqli_query($con, "select * from categories where id_categories = '$row[1]'");
-                $cat_name = mysqli_fetch_array($cat_query);
-                $no++;
-                $harga = number_format($row[3]);
-                echo "
+<div class="card-header">
+    <h3>
+        <i class="fas fa-campground    "></i>
+        <span>Products</span>
+    </h3>
+</div>
+<a href="index.php?menu=products&&method=add">
+    <button class="btn btn-ijo">
+        <i class="fas fa-plus    "></i>
+        <span>Add Data</span>
+    </button>
+</a>
+<table class="table" border="0">
+    <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Image</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <?php
+        $query = mysqli_query($con, "select * from products");
+        $no = 0;
+        while ($row = mysqli_fetch_array($query)) {
+            $cat_query = mysqli_query($con, "select * from categories where id_categories = '$row[1]'");
+            $cat_name = mysqli_fetch_array($cat_query);
+            $no++;
+            $harga = number_format($row[3]);
+            echo "
                         <tr>
                             <td>
                                 $no
@@ -64,7 +70,7 @@
                             </td>
                         </tr>
                     ";
-            }
-            ?>
-        </tbody>
-    </table>
+        }
+        ?>
+    </tbody>
+</table>

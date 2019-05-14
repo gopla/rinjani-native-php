@@ -19,12 +19,11 @@
     </div>
     <div class="qt">"Bukan gunung yang kami taklukan, tapi diri sendiri"<br><b>-Sir Edmund Hillary</b></div>
 </div>
-</div>
 <div class="card" style="margin-top:2%; width:80%; height:400px; margin-left:10%;">
     <div class="card-header">
         <h1>
             <i class="fas fa-map-marker-alt    "></i>
-            <span>Temukan Kami</span>
+            <span>Find Us</span>
         </h1>
     </div>
     <div class="container_body">

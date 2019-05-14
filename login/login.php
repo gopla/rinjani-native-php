@@ -14,11 +14,13 @@ if ($cek > 0) {
 	if ($data['role'] == "admin") {
 
 		$_SESSION['username'] = $user;
+		$_SESSION['id'] = $data['id_user'];
 		$_SESSION['level'] = "admin";
 
 		header("location:../admin/");
 	} else if ($data['role'] == "user") {
 		$_SESSION['username'] = $user;
+		$_SESSION['id'] = $data['id_user'];
 		$_SESSION['level'] = "user";
 
 		header("location:../index.php");

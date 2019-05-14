@@ -63,7 +63,7 @@ body {
   background-color: #0e0c28;
   color: #5c5c5c;
   top: 10%;
-  width: 20%;
+  width: 19%;
   height: 100vh;
   position: fixed;
 }
@@ -96,7 +96,7 @@ body {
 .container {
   width: 80%;
   padding: 2%;
-  margin: 5% 0 0 20%;
+  margin: 5% 0 0 19%;
 }
 
 .card {
@@ -110,21 +110,17 @@ body {
 .detail-container {
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .img-card {
   padding: 2%;
   width: auto;
-  border-radius: 5px;
 }
 
 .detail-card {
-  margin-top: -20%;
   padding: 2%;
   width: 60%;
-  border-radius: 5px;
 }
 
 .img-card img {
@@ -151,7 +147,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 10px 60px;
 }
@@ -310,4 +306,164 @@ body {
 
 .cart-footer {
   margin: 2% 10% 2% 10%;
+}
+
+.navLink span {
+  display: none;
+}
+
+.active span {
+  display: inline-block;
+}
+
+.dataTables_filter label input[type="search"] {
+  margin: 5px 5px 5px 5px;
+  display: inline-block;
+  padding: 5px 10px 5px 20px;
+  font-size: 15px;
+  border: 1px solid #d2d2e4;
+  border-radius: 2px;
+}
+
+.dataTables_length select {
+  margin: 5px 5px 5px 5px;
+  display: inline-block;
+  padding: 5px 5px 5px 0px;
+  font-size: 15px;
+  border: 1px solid #d2d2e4;
+  border-radius: 2px;
+}
+
+.ket {
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  text-align: center;
+  color: #fc4700;
+  margin-top: 50px;
+
+}
+
+.ket hr {
+  width: 5%;
+  margin-top: 25px;
+  margin-left: 640px;
+  font-weight: bold;
+}
+
+
+.gm {
+  margin-top: 75px;
+  margin-left: -270px;
+  width: 100%;
+
+}
+
+.gm1 {
+  width: 20%;
+  margin-top: -360px;
+  margin-left: 700px;
+  text-align: justify;
+}
+
+.gm1 hr {
+  width: 5%;
+  margin-top: 29px;
+  margin-left: 10px;
+}
+
+.parent {
+  background-color: white;
+  width: 100%;
+  height: 380px;
+  opacity: 0.9;
+  margin-top: 400px;
+  margin-bottom: 100px;
+}
+
+.ab {
+  font-family: 'Dancing Script', cursive;
+}
+
+.parent1 {
+  background-color: black;
+  width: 100%;
+  height: 330px;
+
+}
+
+.tx {
+  font-family: 'Great Vibes', cursive;
+  font-size: 28px;
+  text-align: center;
+  color: white;
+
+}
+
+.tx1 {
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+
+}
+
+.icon {
+  width: 20px;
+  height: 40px;
+}
+
+.tx2 {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+
+}
+
+.bodyhome {
+  background-color: white;
+}
+
+.gs {
+  width: 500px;
+  height: 500px
+}
+
+.news {
+  width: 100%;
+  display: inline-block;
+  float: left;
+  padding: 15px 0;
+  margin-top: -140px;
+}
+
+
+.owl-carousel .owl-nav {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+}
+
+.owl-carousel .owl-nav button.owl-next span,
+.owl-carousel .owl-nav button.owl-prev span {
+  width: 45px;
+  height: 45px;
+  font-size: 48px;
+  background-color: #fc4700;
+  display: inline-block;
+  line-height: 35px;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  left: -20px;
+  position: absolute;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  right: -20px;
+  position: absolute;
 }

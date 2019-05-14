@@ -7,54 +7,28 @@ $(document).ready(function () {
     showNextImg()
     setInterval('showNextImg()', 3000)
 
+    var menu = window.location.search
+    if (menu == "?menu=catalogue") {
+        $("#linkCat").addClass("active");
+    } else if (menu == "?menu=mycart" || menu == "?menu=checkout") {
+        $("#linkCart").addClass("active");
+    } else if (menu == "?menu=about") {
+        $("#linkAbout").addClass("active");
+    } else {
+        $("#linkHome").addClass("active");
+    }
+
     /**
-     * 
-     * Script Hide Span
-     * 
-     */
-    $('#linkLogout span').hide();
-    $('#linkLogout').hover(function () {
-        $('#linkLogout span').show();
-
-    }, function () {
-        $('#linkLogout span').hide();
-    });
-
-    $('#linkCat span').hide();
-    $('#linkCat').hover(function () {
-        $('#linkCat span').show();
-
-    }, function () {
-        $('#linkCat span').hide();
-    });
-
-    $('#linkCart span').hide();
-    $('#linkCart').hover(function () {
-        $('#linkCart span').show();
-
-    }, function () {
-        $('#linkCart span').hide();
-    });
-
-    $('#linkAbout span').hide();
-    $('#linkAbout').hover(function () {
-        $('#linkAbout span').show();
-
-    }, function () {
-        $('#linkAbout span').hide();
-    });
-    /**
-     * 
-     * End Script Hide Span
+     * Datatables Library
      */
 
-
+    $(".table").DataTable()
 });
 
 function showNextImg() {
     i++;
     $('#sliderImg' + i).appendTo('#slider').effect("slide");
-    if (i == 3) {
+    if (i == 6) {
         i = 0;
     }
 }

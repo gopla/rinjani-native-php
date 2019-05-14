@@ -11,23 +11,23 @@ if ($method == 'add') {
     <form action="users/controllerUsers.php?act=store" method="post">
         <div class="form-item">
             <label for="var_name">Name</label>
-            <input type="text" name="var_name" class="form-input">
+            <input type="text" name="var_name" class="form-input" required>
         </div>
         <div class="form-item">
             <label for="var_email">Email</label>
-            <input type="email" name="var_email" class="form-input">
+            <input type="email" name="var_email" class="form-input" required>
         </div>
         <div class="form-item">
             <label for="var_user">Username</label>
-            <input type="text" name="var_user" class="form-input">
+            <input type="text" name="var_user" class="form-input" required>
         </div>
         <div class="form-item">
             <label for="var_pass">Password</label>
-            <input type="password" name="var_pass" class="form-input">
+            <input type="password" name="var_pass" class="form-input" required>
         </div>
         <div class="form-item">
             <label for="var_role">Role</label>
-            <select name="var_role" class="form-input">
+            <select name="var_role" class="form-input" required>
                 <option value="user" selected> -> Select a role</option>
                 <option value="user">User</option>
                 <option value="admin">Admin</option>

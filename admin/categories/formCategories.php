@@ -11,7 +11,7 @@ if ($method == 'add') {
     <form action="categories/controllerCategories.php?act=store" method="post">
         <div class="form-item">
             <label for="var_name">Name</label>
-            <input type="text" name="var_name" class="form-input">
+            <input type="text" name="var_name" class="form-input" required>
         </div>
         <div class="form-item">
             <button type="submit" class="btn btn-ijo">
@@ -37,7 +37,7 @@ if ($method == 'add') {
             <input type="hidden" name="var_id" value="<?php echo $id ?>">
             <div class="form-item">
                 <label for="var_name">Name</label>
-                <input type="text" name="var_name" value="<?php echo $row[1] ?>" class="form-input">
+                <input type="text" name="var_name" value="<?php echo $row[1] ?>" class="form-input" required>
             </div>
             <div class="form-item">
                 <button type="submit" class="btn btn-ijo">

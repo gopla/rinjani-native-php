@@ -14,11 +14,12 @@ $(document).ready(function () {
         $("#linkCart").addClass("active");
     } else if (menu == "?menu=about") {
         $("#linkAbout").addClass("active");
-    } else if (menu == "" || menu == "home") {
+    } else if (menu == "" || menu == "?menu=home") {
         $("#linkHome").addClass("active");
     } else {
         $("#linkCat").addClass("active");
     }
+
 
     /**
      * Datatables Library

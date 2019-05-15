@@ -1,4 +1,10 @@
 <div class="card" style="width:80%; height:auto; margin:8% 0 0 8%;">
+    <div class="card-header">
+        <h2>
+            <i class="fas fa-list"></i>
+            <span>Catalogue</span>
+        </h2>
+    </div>
     <div class="item-container">
         <?php
         include_once "config/connect.php";

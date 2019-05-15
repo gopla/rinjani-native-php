@@ -22,9 +22,36 @@
 					$sqlBest = mysqli_query($con, "select id_products, sum(qty) as 'jml' from transactions_detail group by id_products limit 7");
 					while ($rowBest = mysqli_fetch_array($sqlBest)) {
 						$sqlImg = mysqli_query($con, "select * from products where id_products = '$rowBest[0]'");
-						$rowImg = mysqli_fetch_array($sqlImg);
+						$row = mysqli_fetch_array($sqlImg);
 						?>
-						<img src='assets/img/products-img/<?php echo $rowImg[6] ?>'>
+						<div>
+							<center>
+								<img src="assets/img/products-img/<?php echo $row[6] ?>" style="width:200px; height:200px;">
+							</center>
+							<h2>
+								<?php
+								if (strlen($row[2]) > 23) {
+									echo substr($row[2], 0, 20) . ". . .";
+								} else {
+									echo $row[2];
+								}
+								?>
+							</h2>
+							<br>
+							<h3><?php echo "Rp. " . number_format($row[3], 0, ',', '.') ?></h3>
+							<br>
+							<form action="user/controllerCart.php?act=store" method="post">
+								<input type="hidden" name="idUser" value="<?php echo $_SESSION['id'] ?>">
+								<input type="hidden" name="id" value="<?php echo $row[0] ?>">
+								<button class="btn btn-putih" onclick="return confirm('Added to Cart~')">
+									<i class="fas fa-cart-plus    "></i>
+									<span>Add to Cart</span>
+								</button>
+								<a href="index.php?menu=detail&&id=<?php echo $row[0] ?>" class="btn btn-putih">
+									<i class="fas fa-eye    "></i>
+								</a>
+							</form>
+						</div>
 					<?php
 				}
 				?>

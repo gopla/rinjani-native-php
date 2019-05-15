@@ -233,6 +233,15 @@ body {
   color: white;
 }
 
+.btn-cart {
+  background-color: #000080;
+  color: white;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
 .form-item {
   box-sizing: border-box;
 }
@@ -335,7 +344,7 @@ body {
 }
 
 .ket {
-  font-family: 'Cinzel', serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 40px;
   font-weight: bold;
   text-align: center;
@@ -362,6 +371,7 @@ body {
 
 .gm1 {
   width: 20%;
+  font-family: 'Open Sans', sans-serif;
   margin-top: -360px;
   margin-left: 700px;
   text-align: justify;
@@ -383,22 +393,21 @@ body {
 }
 
 .ab {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Satisfy', cursive;
 }
 
 .parent1 {
-  background-color: black;
+  background-color: rgb(32, 32, 32);
   width: 100%;
-  height: 330px;
-
+  height: 240px;
+  border-top: solid 3px #fc4700;
 }
 
 .tx {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Cinzel', serif;
   font-size: 28px;
   text-align: center;
   color: white;
-
 }
 
 .tx1 {
@@ -406,7 +415,6 @@ body {
   font-size: 25px;
   text-align: center;
   color: white;
-
 }
 
 .icon {
@@ -415,8 +423,8 @@ body {
 }
 
 .tx2 {
-  font-family: 'Cinzel', serif;
-  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10pt;
   text-align: center;
   color: white;
 }

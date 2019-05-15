@@ -28,7 +28,7 @@
                         <i class="fas fa-cart-plus    "></i>
                         <span>Add to Cart</span>
                     </button>
-                    <a href="" class="btn btn-putih">
+                    <a href="index.php?menu=detail&&id=<?php echo $row[0] ?>" class="btn btn-putih">
                         <i class="fas fa-eye    "></i>
                     </a>
                 </form>

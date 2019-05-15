@@ -43,12 +43,11 @@
 					A B O U T
 				</div>
 
-				<hr>
-				<br>
+				<hr style="width:100%; margin:1%;">
 				Rinjani is an online shop that provides the most complete hiking <br><br>
 				equipment in Indonesia.You can get all the perfect hiking here.<br><br>
 				With affordable prices and quality goods, of course, can provide <br><br>
-				the convenience of shopping for climbers in Indonesia.So what are<br><br>
+				the convenience of shopping for climbers in Indonesia.So what are<br>
 				you waiting for, immediately get your favorite climbing item here<br><br>
 				<br>
 				RINJANI ' 19
@@ -63,14 +62,10 @@
 				You can get all the perfect hiking here.
 			</div>
 			<br><br>
-
-			<img src="assets/img/ic.png " width="184" height="40">
-
-			<br><br><br>
-
 			<div class="tx2">
-				<p>Copyright &copy; 2019 Rinjani Collection.</p>
-				<p>Developed with <span style="color:red;">&#10084;</span> by April-Gopla.</p>
+				Copyright &copy; 2019 Rinjani Outdoor Shop.
+				<br>
+				Developed with <span style="color:red;">&#10084;</span> by April-Gopla.
 			</div>
 		</div>
 

@@ -21,8 +21,7 @@ include("config/protect.php");
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/smoothproducts.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Satisfy|Open+Sans|Cinzel" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <script src="assets/js/app.js"></script>
@@ -75,6 +74,10 @@ include("config/protect.php");
 
             case 'mycart':
                 require_once "user/cart.php";
+                break;
+
+            case 'detail':
+                require_once "user/detailProduk.php";
                 break;
 
             case 'checkout':

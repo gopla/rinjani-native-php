@@ -28,7 +28,7 @@ include("../config/protectAdmin.php");
 
     <script src="../assets/js/app.js"></script>
 
-    <title>Document</title>
+    <title>Rinjani | Admin Panel</title>
 </head>
 
 

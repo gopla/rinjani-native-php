@@ -9,9 +9,9 @@ switch ($_GET['act']) {
         break;
 
     case 'minus':
-        $sqlCek = mysqli_query($con, "select * from cart where id_products = $id");
+        $sqlCek = mysqli_query($con, "select * from cart where id_products = $id && id_user = $idUser");
         $row = mysqli_fetch_array($sqlCek);
-        if ($row[1] == 1) {
+        if ($row[2] == 1) {
             $sql = "delete from cart where id_products = $id && id_user = $idUser";
         } else {
             $sql = "update cart set qty = qty-1 where id_products = $id && id_user = $idUser";
@@ -19,9 +19,9 @@ switch ($_GET['act']) {
         break;
 
     case 'store':
-        $sqlCek = mysqli_query($con, "select * from cart where id_products = $id");
+        $sqlCek = mysqli_query($con, "select * from cart where id_products = $id && id_user = $idUser");
         $row = mysqli_fetch_array($sqlCek);
-        if ($row[0] == $id) {
+        if ($row[1] == $id) {
             $sql = "update cart set qty = qty+1 where id_products = $id && id_user = $idUser";
         } else {
             $sql = "insert into cart values($idUser,$id,1)";

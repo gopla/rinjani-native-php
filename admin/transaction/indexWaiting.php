@@ -1,7 +1,7 @@
 <div class="card-header">
     <h3>
-        <i class="fas fa-piggy-bank    "></i>
-        <span>Success Transactions</span>
+        <i class="fas fa-clock    "></i>
+        <span>Waiting Confirmation</span>
     </h3>
 </div>
 <table class="table">
@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <?php
-        $query = mysqli_query($con, "select * from transactions where status = 0");
+        $query = mysqli_query($con, "select * from transactions where status = 2");
         $no = 0;
         while ($row = mysqli_fetch_array($query)) {
             $no++;
@@ -35,7 +35,7 @@
                             Rp. " . number_format($row[3], 0, '.', '.') . "
                         </td>
                         <td>
-                            <a href='index.php?menu=transactions&&method=show&&id=$row[0]'>
+                            <a href='index.php?menu=waiting&&method=show&&id=$row[0]'>
                                 <button class='btn btn-biru'>
                                     <i class='fas fa-eye'></i>
                                 </button>

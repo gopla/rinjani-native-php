@@ -1,13 +1,11 @@
 <?php
 session_start();
-$idUser = $_POST['idUser'];
-$fullName = $_POST['fullname'];
-$address = $_POST['address'];
-$phone = $_POST['phone'];
+$idUser = $_GET['idUser'];
+
 
 require_once "../config/connect.php";
 
-$addTrans = mysqli_query($con, "insert into transactions(id_user) values ($idUser)");
+$addTrans = mysqli_query($con, "insert into transactions(id_user,status) values ($idUser,1)");
 $sqlIdTrans = mysqli_query($con, "select * from transactions where id_user = '$idUser' order by id_trans desc limit 1");
 $idTrans = mysqli_fetch_array($sqlIdTrans);
 
@@ -29,13 +27,11 @@ $grandTotal = mysqli_fetch_array($sqlGrandTotal);
 if ($addTransDetail) {
     mysqli_query($con, "update transactions set grandtotal = $grandTotal[0] where id_trans = '$idTrans[0]'");
 
-    mysqli_query($con, "insert into shipment(id_trans,fullname,address,phone) values ('$idTrans[0]','$fullName','$address','$phone')");
-
     mysqli_query($con, "delete from cart where id_user = $idUser");
 }
 ?>
 
 <script>
-    alert("Thanks! Your order will be shipped :)");
-    document.location = '../index.php';
+    alert("Please upload your receipt in My Transactions :)");
+    document.location = '../index.php?menu=mytrans';
 </script>

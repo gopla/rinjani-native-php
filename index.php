@@ -44,6 +44,10 @@ include("config/protect.php");
                 <i class="fas fa-cart-arrow-down    "></i>
                 <span>My Cart</span>
             </a>
+            <a href="index.php?menu=mytrans" id="linkTrans" class="navLink">
+                <i class="fas fa-money-check-alt    "></i>
+                <span>My Transaction</span>
+            </a>
             <a href="index.php?menu=about" id="linkAbout" class="navLink">
                 <i class="fas fa-phone    "></i>
                 <span>About Us</span>
@@ -82,6 +86,10 @@ include("config/protect.php");
 
             case 'checkout':
                 require_once "user/formConfirm.php";
+                break;
+
+            case 'mytrans':
+                require_once "user/mytrans.php";
                 break;
         }
     }

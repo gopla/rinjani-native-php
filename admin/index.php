@@ -67,10 +67,24 @@ include("../config/protectAdmin.php");
                     </a>
                 </div>
                 <div class="sidebar_item">
-                    <a href="index.php?menu=transactions">
+                    <p id="menuTrans">
                         <i class="fas fa-piggy-bank    "></i>
                         <span>Transactions</span>
-                    </a>
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="index.php?menu=waiting">
+                                <i class="fas fa-clock    "></i>
+                                <span>Wait for Confirm</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.php?menu=transactions">
+                                <i class="fas fa-money-check-alt    "></i>
+                                <span>Finished</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="sidebar_item">
                     <a href="index.php?menu=users">
@@ -104,6 +118,10 @@ include("../config/protectAdmin.php");
 
                         case 'transactions':
                             include_once "transaction/index.php";
+                            break;
+
+                        case 'waiting':
+                            include_once "transaction/indexWaiting.php";
                             break;
                     }
                 } else if ($menu == "products") {
@@ -144,6 +162,12 @@ include("../config/protectAdmin.php");
                     switch ($method) {
                         case 'show':
                             include_once "transaction/detailTransaction.php";
+                            break;
+                    }
+                } else if ($menu == "waiting") {
+                    switch ($method) {
+                        case 'show':
+                            include_once "transaction/detailWaiting.php";
                             break;
                     }
                 }

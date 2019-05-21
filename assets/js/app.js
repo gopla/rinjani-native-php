@@ -1,5 +1,5 @@
 var i = 0;
-$(document).ready(function() {
+$(document).ready(function () {
   /**
    * Script SLider
    */
@@ -10,12 +10,14 @@ $(document).ready(function() {
   var menu = window.location.search;
   if (menu == "?menu=catalogue") {
     $("#linkCat").addClass("active");
-  } else if (menu == "?menu=mycart" || menu == "?menu=checkout") {
+  } else if (menu == "?menu=mycart") {
     $("#linkCart").addClass("active");
   } else if (menu == "?menu=about") {
     $("#linkAbout").addClass("active");
   } else if (menu == "" || menu == "?menu=home") {
     $("#linkHome").addClass("active");
+  } else if (menu == "?menu=mytrans" || menu == "?menu=checkout") {
+    $("#linkTrans").addClass("active");
   } else {
     $("#linkCat").addClass("active");
   }
@@ -23,6 +25,14 @@ $(document).ready(function() {
   /**
    * Datatables Library
    */
+
+  /**
+   * Ul SIdebar Admin
+   */
+
+  $("#menuTrans").click(function () {
+    $(".sidebar_item ul li").toggle(200);
+  });
 
   $(".table").DataTable();
   $(".table-item").DataTable();

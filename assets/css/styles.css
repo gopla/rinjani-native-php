@@ -479,3 +479,21 @@ body {
   width: 200px;
   height: 200px;
 }
+
+.sidebar_item ul {
+  list-style: none;
+}
+
+.sidebar_item ul li {
+  display: none;
+  margin: 10px 0 0 20px;
+}
+
+.active_sidebar {
+  display: inline-block;
+}
+
+
+.sidebar_item p {
+  cursor: pointer;
+}

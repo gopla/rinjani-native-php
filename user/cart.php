@@ -114,7 +114,7 @@
         if ($status != 0) {
             ?>
             <br>
-            <a href="index.php?menu=checkout">
+            <a href="user/confirm.php?idUser=<?php echo $_SESSION['id'] ?>">
                 <button class="btn btn-biru">
                     <i class="fas fa-arrow-right    "></i>
                     <span>Checkout</span>

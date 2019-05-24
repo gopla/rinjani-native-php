@@ -80,7 +80,56 @@
 				RINJANI ' 19
 			</div>
 		</div>
-		<div class="parent1">
+		<div class="card" style="margin-top:2%; width:80%; height:400px; margin-left:10%;">
+			<div class="card-header">
+				<h1>
+					<i class="fas fa-map-marker-alt    "></i>
+					<span>Find Us</span>
+				</h1>
+			</div>
+			<div id="googleMap" style="width:100%">
+
+			</div>
+			<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAIKOY-FBIUFNDKbgQic-y2mbUbqLF25PQ&callback=viewMap
+    "></script>
+			<script>
+				function thanks() {
+					alert('Terima kasih atas masukannya! ^o^');
+				}
+
+				function viewMap() {
+					var malang = {
+						lat: -8.0972979,
+						lng: 112.5424168
+					};
+					var contentString = '<h2>Rinjani Outdoor</h2>'
+					var mapProp = {
+						center: malang,
+						zoom: 15,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+
+					var maps = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+					var infoWindow = new google.maps.InfoWindow({
+						content: contentString,
+						position: malang
+					});
+
+					var marker = new google.maps.Marker({
+						position: malang,
+						map: maps,
+						animation: google.maps.Animation.BOUNCE
+					});
+
+					marker.addListener('click', function() {
+						infoWindow.open(maps, marker);
+					});
+				}
+				google.maps.event.addDomListener(window, 'load', viewMap);
+			</script>
+		</div>
+		<div class="parent1" style="margin-top:5%;">
 			<div class="tx">
 				<br>Rinjani Outdoor Shop
 			</div>

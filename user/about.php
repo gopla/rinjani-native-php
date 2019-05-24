@@ -31,13 +31,13 @@
 
         </div>
         <div id="googleMap">
-            <form action="index.php" method="post">
+            <form action="" method="post">
                 <div class="form-item">
                     <label for="var_comment">Tinggalkan Komentar : </label>
                     <textarea name="var_comment" cols="55" rows="11" class="form-input"></textarea>
                 </div>
                 <div class="form-item">
-                    <button type="submit" class="btn btn-ijo" onclick="thanks()">
+                    <button type="submit" class="btn btn-ijo" name="btnKomen">
                         <i class="fas fa-paper-plane    "></i>
                         <span>Kirim</span>
                     </button>
@@ -85,3 +85,25 @@
     }
     google.maps.event.addDomListener(window, 'load', viewMap);
 </script>
+
+<?php
+if (isset($_POST['btnKomen'])) {
+    ?>
+    <div class="card" style="margin-top:7%; width:80%; margin-left:10%;">
+        <div class="card-header">
+            <h3>
+                <i class="fas fa-envelope    "></i>
+                <span>Your Comment</span>
+            </h3>
+        </div>
+        <h2>
+            <?php
+            echo $_POST['var_comment'];
+            ?>
+        </h2>
+    </div>
+<?php
+} else {
+    echo "";
+}
+?>

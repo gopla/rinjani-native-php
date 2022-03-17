@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.1.35-MariaDB - mariadb.org binary distribution
--- Server OS:                    Win32
--- HeidiSQL Version:             9.5.0.5196
+-- Server version:               10.4.22-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             11.3.0.6295
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -10,6 +10,12 @@
 /*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Dumping database structure for outdoor_shop
+CREATE DATABASE IF NOT EXISTS `outdoor_shop` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `outdoor_shop`;
 
 -- Dumping structure for table outdoor_shop.cart
 CREATE TABLE IF NOT EXISTS `cart` (
@@ -49,8 +55,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `name` varchar(80) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   `stock` int(11) DEFAULT NULL,
-  `description` text,
-  `img` text,
+  `description` text DEFAULT NULL,
+  `img` text DEFAULT NULL,
   PRIMARY KEY (`id_products`),
   KEY `FK_products_categories` (`id_categories`),
   CONSTRAINT `FK_products_categories` FOREIGN KEY (`id_categories`) REFERENCES `categories` (`id_categories`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -65,7 +71,7 @@ INSERT INTO `products` (`id_products`, `id_categories`, `name`, `price`, `stock`
 	(6, 4, 'Caterpillar Men Induction Waterproof Composite Toe Work Boot ', 650000, 30, 'Sepatu', 'CATM-P90923-030519-S18-032.jpg'),
 	(7, 3, 'Consina Tent Kingdom 8', 3000000, 4, 'Tenda gede', 'tenda-kingdom-800x800.jpg'),
 	(8, 5, 'Consina Jacket Maverick', 185000, 18, 'Jaket apik', 'maverick-DGY3-800x800.jpg'),
-	(9, 1, 'Consina Trivia Lightblue', 175000, 37, 'Tas biru muda', 'trivia-BL6-800x800.jpg'),
+	(9, 1, 'Consina Trivia Lightblue', 175000, 36, 'Tas biru muda', 'trivia-BL6-800x800.jpg'),
 	(10, 3, 'Eiger Baluran 2P Tent - Orange', 17500000, 4, 'Tenda larang tapi apik, tapi larang', '910004588002_4.jpg'),
 	(11, 5, 'Eiger Triple Jacket - Navy', 600000, 24, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'j53410ln_1.jpg'),
 	(12, 4, 'Eiger 1989 Dauerhaft Shoes - Black', 850000, 20, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper dolor a consequat ornare. Praesent posuere turpis et dolor imperdiet, eget fringilla sem ultricies. Fusce vitae facilisis tortor. Ut ullamcorper ex risus, eget vestibulum eros venenatis a. Mauris nisl dui, porta eu finibus et, ultricies vel eros. Nulla nec dolor in augue ultricies finibus sit amet ut lorem. Vestibulum tempus ante ex, scelerisque scelerisque augue bibendum sed. Pellentesque sapien magna, sollicitudin sed commodo sed, interdum vitae ex. Donec lobortis nisl purus, vel dignissim lectus placerat in. In hac habitasse platea dictumst. Morbi sed nisl tempor, viverra turpis sit amet, commodo ligula. Aenean sit amet efficitur est, quis commodo lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla molestie leo in augue tempor, vel fermentum sapien finibus. Curabitur tristique at lacus eget bibendum. Nam ullamcorper sem non enim condimentum pretium. ', '910003752h-1.jpg'),
@@ -105,9 +111,9 @@ CREATE TABLE IF NOT EXISTS `shipment` (
   PRIMARY KEY (`id_shipment`),
   KEY `FK_shipment_transactions` (`id_trans`),
   CONSTRAINT `FK_shipment_transactions` FOREIGN KEY (`id_trans`) REFERENCES `transactions` (`id_trans`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Dumping data for table outdoor_shop.shipment: ~4 rows (approximately)
+-- Dumping data for table outdoor_shop.shipment: ~6 rows (approximately)
 /*!40000 ALTER TABLE `shipment` DISABLE KEYS */;
 INSERT INTO `shipment` (`id_shipment`, `id_trans`, `fullname`, `address`, `phone`) VALUES
 	(1, 21, 'April', 'Cedek', '089123456765'),
@@ -115,36 +121,39 @@ INSERT INTO `shipment` (`id_shipment`, `id_trans`, `fullname`, `address`, `phone
 	(3, 24, 'Fernanda Dwi Iswidianggi', 'Jl. Mentaraman Gg. 4, Talok, Turen', '082257229842'),
 	(4, 25, 'Tri Ardiansyah', 'Bojonegoro', '082299887766'),
 	(5, 26, 'Erry Anggi Nanda Gautama', 'Kediri', '089123456765'),
-	(6, 27, 'Fernanda Dwi Iswidianggi', 'Jl. Mentaraman Gg. 4, Talok, Turen, Malang', '082257229842');
+	(6, 27, 'Fernanda Dwi Iswidianggi', 'Jl. Mentaraman Gg. 4, Talok, Turen, Malang', '082257229842'),
+	(7, 28, 'Naufal Yudhistira', 'Surabaya', '082287229812');
 /*!40000 ALTER TABLE `shipment` ENABLE KEYS */;
 
 -- Dumping structure for table outdoor_shop.transactions
 CREATE TABLE IF NOT EXISTS `transactions` (
   `id_trans` int(11) NOT NULL AUTO_INCREMENT,
-  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NULL DEFAULT current_timestamp(),
   `id_user` int(11) DEFAULT NULL,
   `grandtotal` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT 0,
   PRIMARY KEY (`id_trans`),
   KEY `FK_transactions_users` (`id_user`),
   CONSTRAINT `FK_transactions_users` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
--- Dumping data for table outdoor_shop.transactions: ~12 rows (approximately)
+-- Dumping data for table outdoor_shop.transactions: ~13 rows (approximately)
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
-INSERT INTO `transactions` (`id_trans`, `date`, `id_user`, `grandtotal`) VALUES
-	(12, '2019-05-09 22:13:57', 2, 360000),
-	(14, '2019-05-09 22:16:00', 3, 17500000),
-	(15, '2019-05-09 22:43:43', 3, 1950000),
-	(16, '2019-05-09 22:45:33', 3, 2300000),
-	(17, '2019-05-09 22:47:27', 2, 185000),
-	(18, '2019-05-10 08:09:00', 3, 700000),
-	(19, '2019-05-10 08:15:31', 1, 825000),
-	(21, '2019-05-13 18:19:31', 2, 12350000),
-	(23, '2019-05-13 18:32:02', 3, 5200000),
-	(24, '2019-05-13 22:01:30', 4, 3375000),
-	(25, '2019-05-13 22:05:05', 1, 370000),
-	(26, '2019-05-14 14:34:07', 1, 350000),
-	(27, '2019-05-15 21:33:41', 4, 1785000);
+INSERT INTO `transactions` (`id_trans`, `date`, `id_user`, `grandtotal`, `status`) VALUES
+	(12, '2019-05-09 22:13:57', 2, 360000, 1),
+	(14, '2019-05-09 22:16:00', 3, 17500000, 1),
+	(15, '2019-05-09 22:43:43', 3, 1950000, 1),
+	(16, '2019-05-09 22:45:33', 3, 2300000, 1),
+	(17, '2019-05-09 22:47:27', 2, 185000, 1),
+	(18, '2019-05-10 08:09:00', 3, 700000, 1),
+	(19, '2019-05-10 08:15:31', 1, 825000, 1),
+	(21, '2019-05-13 18:19:31', 2, 12350000, 0),
+	(23, '2019-05-13 18:32:02', 3, 5200000, 0),
+	(24, '2019-05-13 22:01:30', 4, 3375000, 0),
+	(25, '2019-05-13 22:05:05', 1, 370000, 0),
+	(26, '2019-05-14 14:34:07', 1, 350000, 0),
+	(27, '2019-05-15 21:33:41', 4, 1785000, 0),
+	(28, '2022-03-17 11:43:49', 4, 175000, 1);
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 
 -- Dumping structure for table outdoor_shop.transactions_detail
@@ -160,7 +169,7 @@ CREATE TABLE IF NOT EXISTS `transactions_detail` (
   CONSTRAINT `FK_transactions_detail_transactions` FOREIGN KEY (`id_trans`) REFERENCES `transactions` (`id_trans`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table outdoor_shop.transactions_detail: ~21 rows (approximately)
+-- Dumping data for table outdoor_shop.transactions_detail: ~22 rows (approximately)
 /*!40000 ALTER TABLE `transactions_detail` DISABLE KEYS */;
 INSERT INTO `transactions_detail` (`id_trans`, `id_products`, `price`, `qty`, `subtotal`) VALUES
 	(12, 9, 175000, 1, 175000),
@@ -184,7 +193,8 @@ INSERT INTO `transactions_detail` (`id_trans`, `id_products`, `price`, `qty`, `s
 	(25, 8, 185000, 2, 370000),
 	(26, 5, 350000, 1, 350000),
 	(27, 13, 1600000, 1, 1600000),
-	(27, 8, 185000, 1, 185000);
+	(27, 8, 185000, 1, 185000),
+	(28, 9, 175000, 1, 175000);
 /*!40000 ALTER TABLE `transactions_detail` ENABLE KEYS */;
 
 -- Dumping structure for table outdoor_shop.users
@@ -200,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
--- Dumping data for table outdoor_shop.users: ~7 rows (approximately)
+-- Dumping data for table outdoor_shop.users: ~6 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id_user`, `fullname`, `email`, `username`, `password`, `role`) VALUES
 	(1, 'Aprilia Putri A', 'april@here.com', 'april', '9e3895cedfa93fc7d6f63cb00ad91d1b', 'admin'),
@@ -212,5 +222,6 @@ INSERT INTO `users` (`id_user`, `fullname`, `email`, `username`, `password`, `ro
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
